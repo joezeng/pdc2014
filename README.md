@@ -5,6 +5,15 @@ This is the judge program for the [Prisoner's Dilemma Challenge](http://codegolf
 
 The preparation and scoring tools on this repository are licensed under the [MIT License](https://github.com/joezeng/pdc2014/blob/master/LICENSE). Entrant source files in "src/" are licensed under the [Creative Commons Attribution-ShareAlike 3.0 License](http://creativecommons.org/licenses/by-sa/3.0/) unless otherwise specified.
 
+
+Prereqs
+-------
+
+This program has only be tested on Ubuntu Linux, but should work on other POSIX systems with minimal tweaking.
+
+The program `timelimit` that limits execution time of programs must be installed.
+
+
 How to Use
 ----------
 
