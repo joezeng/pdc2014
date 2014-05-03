@@ -5,14 +5,33 @@ import textwrap
 import random
 import os
 
-# config parameters
+###### config parameters ######
 
+# The directory where contestant executables reside.
+# Don't change this unless you've also changed the directory in compile.py.
 contestant_dir = "exe"
+
+# Displays a log of each player's decisions if set to True.
 log_player_outputs = False
+
+# Displays a log of all the players' decisions at the end of the game if set to True.
 show_game_log = True
+
+# Prompts for an Enter to continue if set to True.
 pause_between_rounds = False
+
+# Shuffles the contestants' IDs in a "random" order if set to True.
+# The randomness depends on the given seed, so as to be replicable.
 random_order = True
+
+# Shuffles the contestants' IDs in a completely random order if set to True and random_order is set to True.
+# This will produce a different result every time.
 totally_random_order = True
+
+# The execution limit for programs.
+time_limit = 2
+
+###############################
 
 # run code
 
@@ -47,7 +66,7 @@ def play_round(player):
 	fout.write(text_input)
 	fout.close()
 
-	p = call(["timelimit -t 2 %s/%s" % (contestant_dir, filenames[player])], stdin=open("gamestate", 'r'), stdout=open("output", 'w'), shell=True)
+	p = call(["timelimit -t %d %s/%s" % (time_limit, contestant_dir, filenames[player])], stdin=open("gamestate", 'r'), stdout=open("output", 'w'), shell=True)
 
 	fin = open("output", "rb")
 	take_output = fin.readline()
@@ -86,3 +105,6 @@ if show_game_log:
 print "Final scores:"
 for n in xrange(len(scores)):
 	print filenames[n], scores[n]
+
+os.remove("gamestate")
+os.remove("output")
