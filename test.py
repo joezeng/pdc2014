@@ -40,7 +40,7 @@ filenames.sort()
 
 if random_order:
 	if not totally_random_order:
-		random.seed(4164398143650650814)
+		random.seed(3042636159705567539)
 	random.shuffle(filenames)
 
 n_players = len(filenames)
