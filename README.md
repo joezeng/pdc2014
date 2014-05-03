@@ -9,7 +9,7 @@ The preparation and scoring tools on this repository are licensed under the [MIT
 Prereqs
 -------
 
-This program has only be tested on Ubuntu Linux, but should work on other POSIX systems with minimal tweaking.
+This program has only be tested on Ubuntu Linux, but should work on other POSIX systems with minimal tweaking. It will _not_ work on Windows as-is.
 
 The program `timelimit` that limits execution time of programs must be installed.
 
@@ -28,8 +28,8 @@ The four Python files provided in the root directory are executed in this order:
 
 Each entrant should be one source file, that will eventually be either compiled or interpreted by the host system. Place each entry into the directory `src` with a suitable filename. Make sure, however, that you do not name two files of different languages with the same name, as extensions are stripped. Also, make sure that you use the following extensions for specific languages:
 	
-	* Python 2.x - `.py`
-	* Python 3.x - `.py3`
+* Python 2.x - `.py`
+* Python 3.x - `.py3`
 
 Run `verify.py` on the files and compare the hashes of the source file to the posted hash of each entrant. If there are no entrant hashes at all, then you can safely skip this step, as `verify.py` doesn't do anything else.
 
