@@ -86,3 +86,6 @@ if show_game_log:
 print "Final scores:"
 for n in xrange(len(scores)):
 	print filenames[n], scores[n]
+
+os.remove("gamestate")
+os.remove("output")
