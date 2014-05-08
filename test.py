@@ -72,7 +72,7 @@ def play_round(player):
 	take_output = fin.readline()
 	if log_player_outputs:
 		print take_output.strip()
-	takes = take_output.split()
+	takes = sorted(set(map(int, take_output.split())))
 	state = fin.readline()
 	fin.close()
 	return (takes, state)
@@ -87,7 +87,7 @@ for n_round in xrange(n_rounds):
 		output = play_round(x)
 		for victim in output[0]:
 			log_entry += "(%s, %s) " % (x + 1, victim)
-			scores[int(victim) - 1] -= 2
+			scores[victim - 1] -= 2
 			scores[x] += 1
 		states[x] = output[1]
 	game_log += log_entry + "\n"
