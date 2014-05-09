@@ -26,7 +26,7 @@ random_order = True
 
 # Shuffles the contestants' IDs in a completely random order if set to True and random_order is set to True.
 # This will produce a different result every time.
-totally_random_order = True
+totally_random_order = False
 
 # The execution limit for programs.
 time_limit = 2
@@ -42,6 +42,8 @@ if random_order:
 	if not totally_random_order:
 		random.seed(3042636159705567539)
 	random.shuffle(filenames)
+
+print filenames
 
 n_players = len(filenames)
 
